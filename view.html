@@ -1,0 +1,32 @@
+<div ng-controller="mainController">
+  <span>{{remaining()}} of {{list.length}} remaining</span>
+  
+  <!-- [ <a href ng-click="archive()">archive</a> ] -->
+  
+  <form ng-submit="submit()">
+    <input type="text" ng-model="newTodo"  size="30"
+           placeholder="add new todo here">
+    <input class="btn-primary" type="submit" value="add">
+  </form>
+    <ul class="unstyled">
+    <li ng-repeat="todo in list | filter:search">
+      <input type="checkbox" ng-model="todo.done">
+      <span class="done-{{todo.done}}">{{todo.text}}</span>
+    </li>
+  </ul>
+    <p>
+        {{remaining()}} remaining
+    </p>
+<!--
+    <input type="checkbox" data-ng-model='search.type1' data-ng-true-value='true' data-ng-false-value='' /> Completed &nbsp;&nbsp;&nbsp;
+        <input type="checkbox" data-ng-model='search.type2' data-ng-true-value='false' data-ng-false-value='' /> Pending&nbsp;&nbsp;&nbsp;
+-->
+<!--        <input type="checkbox" checked="checked" data-ng-model='search.type3' data-ng-true-value='' data-ng-false-value='' /> All&nbsp;&nbsp;&nbsp;-->
+    
+    <input type="radio" ng-model="search.done" value="true" > Completed
+    <input type="radio" ng-model="search.done" value="false" > Pending
+    <input type="radio" ng-model="search.done" value="" > All
+<!--    <input type="radio" ng-model="selectedSearch" value="Category" > Category-->
+    
+    <button type="button" ng-click="archive()" ng-if="remaining() !== list.length">Archive</button>
+</div>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="todoApp">
+    <head>
+        <script src="//code.angularjs.org/1.6.7/angular.min.js"></script>
+        <script src="//code.angularjs.org/1.6.7/angular-route.min.js"></script>
+        <script src="myApp.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 com-md-offset-3">
+                    <h1 style="text-align:center">todo</h1>
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>
